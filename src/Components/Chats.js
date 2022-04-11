@@ -12,11 +12,8 @@ const Chats = () => {
     if (!loginCredentials.name) {
       Navigate("/");
     } else {
-      return () => {
-        connectToServer();
-      };
+      connectToServer();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
