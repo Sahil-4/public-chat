@@ -25,17 +25,15 @@ const Chatform = () => {
     >
       <input
         type="text"
-        className="message-box chat-form-element"
+        required="True"
+        className="message-input chat-form-element"
         value={message}
         onChange={handleOnChange}
       />
-      <button id="emoji-button" className="chat-button chat-form-element">
+      <button id="emoji-button" className="emji-button chat-form-element">
         Emoji
       </button>
-      <button
-        className="chat-button chat-form-element send-chat-button"
-        type="submit"
-      >
+      <button className="chat-button chat-form-element" type="submit">
         Send
       </button>
     </form>

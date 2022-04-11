@@ -6,7 +6,7 @@ import ChatContext from "../AppContext/Chat/ChatContext";
 
 const Chats = () => {
   const Navigate = useNavigate();
-  const { connectToServer, loginCredentials } = useContext(ChatContext);
+  const { connectToServer, loginCredentials, users } = useContext(ChatContext);
 
   useEffect(() => {
     if (!loginCredentials.name) {
@@ -18,7 +18,7 @@ const Chats = () => {
 
   return (
     <div className="chats-page H100">
-      <div className="status"></div>
+      <div className="status">Active Users : {users.length || 0}</div>
       <Chatbox />
       <Chatform />
     </div>

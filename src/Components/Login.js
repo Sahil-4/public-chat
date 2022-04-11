@@ -19,9 +19,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page">
-      <form method="POST" className="login-form" onSubmit={handleOnSubmit}>
-        <legend className="welcome-tag">Welcome to Public Chat</legend>
+    <div className="H100 W100 login-page">
+      <form method="POST" onSubmit={handleOnSubmit}>
+        <legend>Welcome to Public Chat</legend>
         <input
           type="text"
           name="name"

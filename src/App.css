@@ -1,35 +1,31 @@
-.welcome-tag {
-  font-size: 2rem;
-  margin: 20px 0;
-}
-
 .login-page {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f8ff;
-  position: relative;
+  font-size: 2rem;
+  text-align: center;
+  background: #bb69bb;
 }
 
-.login-form {
+input,
+button {
+  border: 0px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 3px;
+  width: 70%;
+}
+
+button {
+  width: 35%;
+}
+
+.status {
+  height: 20px;
+  background: rgb(172, 159, 149);
   text-align: center;
 }
 
-.chats-page {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #8fb1b5;
-}
-
-.chat-container {
-  height: calc(100% - 36px);
-  width: 100%;
-  background-color: #7dbaf0;
+.chats-container {
+  height: calc(100% - 20px - 32px);
+  background: rgb(160, 223, 170);
 }
 
 .chat {
@@ -56,27 +52,19 @@
 }
 
 .chat-form {
+  height: 32px;
   position: fixed;
   bottom: 0;
 }
 
 .chat-form-element {
-  height: 36px;
-  color: #0e0f19;
-  background: #fffaff;
-  outline: none;
-  border: 1px solid #0e0f19;
+  width: 13%;
+  height: 100%;
+  font-size: 1.3rem;
+  display: inline;
 }
 
-.message-box {
-  width: 75%;
-  overflow: hidden;
-}
-
-.chat-button {
-  width: 10%;
-}
-
-.send-chat-button {
-  width: 15%;
+.message-input {
+  text-align: left;
+  width: 74%;
 }

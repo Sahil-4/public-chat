@@ -21,6 +21,7 @@ const ChatState = (props) => {
     }
 
     const connectToServer = () => {
+        console.log("connecting To Server");
         socket = io("https://public-chat-backend.herokuapp.com/", {
             withCredentials: true,
             extraHeaders: {
@@ -30,23 +31,28 @@ const ChatState = (props) => {
         });
 
         socket.on('connect', () => {
+            console.log("connected To Server");
             socket.emit('join-chat', loginCredentials.name);
         })
 
         socket.on('users', users => {
+            console.log("users recv from Server");
             setUsers(users);
         })
 
         socket.on('recv-chat', (data) => {
+            console.log("chat recv from Server");
             setMessages(Messages => [...Messages, data]);
         })
 
         socket.on('connect_error', (err) => {
+            console.log("error recv from Server");
             console.log(err);
         })
     }
 
     const sendChat = (msg) => {
+        console.log("chat send to Server");
         let data = { message: msg, author: loginCredentials.name, timestamp: giveTimestamp() }
         setMessages(Messages => [...Messages, data]);
         socket.emit('send-chat', data);

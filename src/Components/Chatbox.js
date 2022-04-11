@@ -6,11 +6,10 @@ const Chatbox = () => {
   const { Messages } = useContext(ChatContext);
 
   return (
-    <div className="chat-container">
-      {Messages.length &&
-        Messages.map((message, index) => (
-          <ChatMessage key={index} message={message} />
-        ))}
+    <div className="chats-container">
+      {Messages.map((message, index) => (
+        <ChatMessage key={index} message={message} />
+      ))}
     </div>
   );
 };
