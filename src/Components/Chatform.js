@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import ChatContext from "../AppContext/Chat/ChatContext";
+import EmojiIcon from "./assets/EmojiIcon.png";
+import SendIcon from "./assets/SendIcon.png";
 
 const Chatform = () => {
   const { sendChat } = useContext(ChatContext);
@@ -31,10 +33,10 @@ const Chatform = () => {
         onChange={handleOnChange}
       />
       <button id="emoji-button" className="emji-button chat-form-element">
-        Emoji
+        <img src={EmojiIcon} alt="Emoji icon" className="H100"/>
       </button>
       <button className="chat-button chat-form-element" type="submit">
-        Send
+        <img src={SendIcon} alt="Send icon" className="H100"/>
       </button>
     </form>
   );

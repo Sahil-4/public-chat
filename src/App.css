@@ -1,36 +1,36 @@
 .login-page {
-  font-size: 2rem;
+  height: auto;
+  font-size: 1.6rem;
   text-align: center;
-  background: #bb69bb;
+  margin-top: 50%;
 }
 
 input,
 button {
-  border: 0px;
+  width: 70%;
   font-size: 1.5rem;
   text-align: center;
+  margin: 10px 10%;
+  border-style: solid;
+  border-color: #000000;
   border-radius: 3px;
-  width: 70%;
 }
 
 button {
-  width: 35%;
+  width: 30%;
 }
 
 .status {
   height: 20px;
-  background: rgb(172, 159, 149);
   text-align: center;
 }
 
 .chats-container {
   height: calc(100% - 20px - 32px);
-  background: rgb(160, 223, 170);
 }
 
 .chat {
   width: 60%;
-  background-color: #77dada;
   margin: 3px 0;
 }
 
@@ -54,12 +54,14 @@ button {
 .chat-form {
   height: 32px;
   position: fixed;
+  background-color: rgb(13, 30, 30);
   bottom: 0;
 }
 
 .chat-form-element {
   width: 13%;
   height: 100%;
+  margin: 0;
   font-size: 1.3rem;
   display: inline;
 }
@@ -67,4 +69,11 @@ button {
 .message-input {
   text-align: left;
   width: 74%;
+}
+
+@media screen and (min-width : 720px) {
+  .chat-form {
+    width: 720px;
+    margin: 0 auto;
+  }
 }

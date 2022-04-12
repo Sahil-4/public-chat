@@ -18,7 +18,6 @@ html {
 
 body {
     font-family: 'Merriweather', serif;
-    background: #b3bec0;
 }
 
 /* Remove scroll bar for chrome Safari Opera */
@@ -43,6 +42,13 @@ body {
     overflow-y: scroll;
 }
 
-#root {
-    background: #9af0ff;
+@media screen and (min-width : 720px) {
+    html {
+        font-size: 26px;
+    }
+
+    #root {
+        width: 720px;
+        margin: 0 auto;
+    }
 }
