@@ -3,11 +3,15 @@ import Login from './Components/Login';
 import Chats from './Components/Chats';
 import NotFound from './Components/NotFound';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ChatState from './AppContext/Chat/ChatState';
+import { useContext } from 'react';
+import ChatContext from './AppContext/Chat/ChatContext';
 
 function App() {
-  return (
-    <ChatState>
+  const { status } = useContext(ChatContext);
+  if (status) {
+    return (<div className="loader" ></div>);
+  } else {
+    return (
       <Router>
         <Routes>
           <Route exact path='/' element={<Login />} />
@@ -15,8 +19,9 @@ function App() {
           <Route exact path='*' element={<NotFound />} />
         </Routes>
       </Router>
-    </ChatState>
-  );
+    );
+  }
+
 }
 
 export default App;

@@ -32,6 +32,7 @@ button {
 .chat {
   width: 60%;
   margin: 3px 0;
+  background-color: #b7b7b7;
 }
 
 .chat-send {
@@ -54,21 +55,54 @@ button {
 .chat-form {
   height: 32px;
   position: fixed;
-  background-color: rgb(13, 30, 30);
   bottom: 0;
+  background-color: cadetblue;
 }
 
-.chat-form-element {
-  width: 13%;
-  height: 100%;
+.chat-input {
+  width: 75%;
+  text-align: left;
   margin: 0;
-  font-size: 1.3rem;
+}
+
+.chat-btns {
+  width: 25%;
+  float: right;
+  overflow: hidden;
+  background-color: darkgoldenrod;
   display: inline;
 }
 
-.message-input {
-  text-align: left;
-  width: 74%;
+.chat-btn {
+  margin: 0;
+  padding: 0;
+  float: right;
+  overflow: hidden;
+  width: 10%;
+}
+
+.send-btn {
+  width: 15%;
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  margin: 50% auto;
+  border-radius: 50%;
+  border: 20px solid #b7b7b7;
+  border-top: 20px solid #1abc9c;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width : 720px) {

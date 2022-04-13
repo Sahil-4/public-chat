@@ -8,6 +8,7 @@ const ChatState = (props) => {
     const [loginCredentials, setLoginCredentials] = useState({ name: "" });
     const [users, setUsers] = useState([]);
     const [Messages, setMessages] = useState([]);
+    const [status, setStatus] = useState(false);
 
     const giveTimestamp = () => {
         let d = new Date();
@@ -21,6 +22,7 @@ const ChatState = (props) => {
     }
 
     const connectToServer = () => {
+        // setStatus(true);
         console.log("connecting To Server");
         socket = io("https://public-chat-backend.herokuapp.com/", {
             withCredentials: true,
@@ -32,6 +34,7 @@ const ChatState = (props) => {
 
         socket.on('connect', () => {
             console.log("connected To Server");
+            // setStatus(false);
             socket.emit('join-chat', loginCredentials.name);
         })
 
@@ -59,7 +62,7 @@ const ChatState = (props) => {
     }
 
     return (
-        <ChatContext.Provider value={{ loginCredentials, setLoginCredentials, connectToServer, users, Messages, sendChat }}>
+        <ChatContext.Provider value={{ loginCredentials, setLoginCredentials, connectToServer, users, Messages, sendChat, status }}>
             {props.children}
         </ChatContext.Provider>
     )

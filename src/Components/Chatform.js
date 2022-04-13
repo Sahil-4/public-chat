@@ -19,24 +19,31 @@ const Chatform = () => {
   };
 
   return (
-    <form
-      id="chat-form"
-      className="chat-form W100"
-      method="POST"
-      onSubmit={handleOnSubmit}
-    >
+    <form className="chat-form W100" method="POST" onSubmit={handleOnSubmit}>
       <input
+        className="chat-input H100"
         type="text"
-        required="True"
-        className="message-input chat-form-element"
         value={message}
         onChange={handleOnChange}
       />
-      <button id="emoji-button" className="emji-button chat-form-element">
-        <img src={EmojiIcon} alt="Emoji icon" className="H100"/>
+      <button
+        className="chat-btn send-btn H100"
+        type="submit"
+        onClick={() => {
+          console.log("hello sf");
+        }}
+      >
+        <img src={SendIcon} alt="Send icon" className="H100" />
       </button>
-      <button className="chat-button chat-form-element" type="submit">
-        <img src={SendIcon} alt="Send icon" className="H100"/>
+      <button className="chat-btn H100" type="button">
+        <img
+          src={EmojiIcon}
+          alt="Emoji icon"
+          className="H100"
+          onClick={() => {
+            console.log("hello mf");
+          }}
+        />
       </button>
     </form>
   );
