@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ChatContext from "./ChatContext";
 import { io } from "socket.io-client"
+import Tap from "./../../Components/assets/tick.mp3";
 
 var socket;
 
@@ -10,16 +11,30 @@ const ChatState = (props) => {
     const [Messages, setMessages] = useState([]);
     const [status, setStatus] = useState(false);
 
+    const tap = new Audio(Tap);
+
     const giveTimestamp = () => {
         let d = new Date();
 
         let cur_time = `${d.getHours()}:${d.getMinutes()} AM`;
         if (d.getHours() > 12) {
-            cur_time = `${d.getHours() - 12}:${d.getMinutes()} PM`
+            cur_time = `${d.getHours() - 12}:${d.getMinutes()} PM`;
         }
 
+        let hr = cur_time.split(":")[0];
+        let mn = cur_time.split(":")[1].split(" ")[0];
+        let md = cur_time.split(":")[1].split(" ")[1];
+
+        if (hr < 10) {
+            hr = "0" + hr;
+        }
+        if (mn < 10) {
+            mn = "0" + mn;
+        }
+
+        cur_time = `${hr}:${mn} ${md}`;
         return cur_time;
-    }
+    };
 
     const connectToServer = () => {
         // setStatus(true);
@@ -41,9 +56,12 @@ const ChatState = (props) => {
         socket.on('users', users => {
             console.log("users recv from Server");
             setUsers(users);
+            let data = { message: `${loginCredentials.name}, joined the chat.`, author: loginCredentials.name, timestamp: giveTimestamp() }
+            socket.emit('send-chat', data);
         })
 
         socket.on('recv-chat', (data) => {
+            tap.play();
             console.log("chat recv from Server");
             setMessages(Messages => [...Messages, data]);
         })
