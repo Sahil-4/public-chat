@@ -9,14 +9,16 @@ input,
 button {
   width: 70%;
   font-size: 1.5rem;
+  background: #060606;
   text-align: center;
   margin: 10px 10%;
   border-style: solid;
-  border-color: #000000;
+  border-color: #1477D4;
   border-radius: 3px;
 }
 
 button {
+  background: #1477D4;
   width: 30%;
 }
 
@@ -33,11 +35,15 @@ button {
 
 .chat {
   width: 60%;
-  margin: 3px 0;
-  background-color: #b7b7b7;
+  margin: 3px 5px;
+  word-wrap: break-word;
+  color: #000000;
+  background-color: #FFFFFF;
 }
 
 .chat-send {
+  color: #FFFFFF;
+  background-color: #1477D4;
   text-align: right;
   float: right;
 }
@@ -63,6 +69,7 @@ button {
 
 .chat-input {
   width: 75%;
+  background: #FFFFFF;
   text-align: left;
   margin: 0;
 }
@@ -71,31 +78,42 @@ button {
   width: 25%;
   float: right;
   overflow: hidden;
-  background-color: darkgoldenrod;
   display: inline;
 }
 
 .chat-btn {
   margin: 0;
   padding: 0;
+  background: #FFFFFF;
   float: right;
   overflow: hidden;
   width: 10%;
 }
 
 .send-btn {
+  background: #1477D4;
   width: 15%;
 }
 
-.loader {
+.loader-container-inactive {
+  display: none;
+}
+
+.loader-container-active {
+  position: fixed;
+  left: 0;
+  background: #000;
+}
+
+.loader-active {
   width: 80px;
   height: 80px;
   position: fixed;
   left: calc(50% - 40px);
   top: calc(50% - 40px);
   border-radius: 50%;
-  border: 20px solid #b7b7b7;
-  border-top: 20px solid #1abc9c;
+  border: 20px solid #BCD4EC;
+  border-top: 20px solid #509BE0;
   animation: spin 1s linear infinite;
 }
 

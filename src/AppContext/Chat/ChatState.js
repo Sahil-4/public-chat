@@ -9,7 +9,7 @@ const ChatState = (props) => {
     const [loginCredentials, setLoginCredentials] = useState({ name: "" });
     const [users, setUsers] = useState([]);
     const [Messages, setMessages] = useState([]);
-    const [status, setStatus] = useState(false);
+    const [status, setStatus] = useState("inactive");
 
     const tap = new Audio(Tap);
 
@@ -37,7 +37,7 @@ const ChatState = (props) => {
     };
 
     const connectToServer = () => {
-        // setStatus(true);
+        // setStatus("active");
         console.log("connecting To Server");
         socket = io("https://public-chat-backend.herokuapp.com/", {
             withCredentials: true,
@@ -49,7 +49,7 @@ const ChatState = (props) => {
 
         socket.on('connect', () => {
             console.log("connected To Server");
-            setStatus(false);
+            setStatus("inactive");
             socket.emit('join-chat', loginCredentials.name);
             let data = { message: `${loginCredentials.name}, joined the chat.`, author: loginCredentials.name, timestamp: giveTimestamp() }
             socket.emit('send-chat', data);

@@ -9,10 +9,11 @@ import Test from './Components/Test';
 
 function App() {
   const { status } = useContext(ChatContext);
-  if (status) {
-    return (<div className="loader" ></div>);
-  } else {
-    return (
+  return (
+    <>
+      <div className={`loader-container-${status} H100 W100`}>
+        <div className={`loader-${status}`} ></div>
+      </div>
       <Router>
         <Routes>
           <Route exact path='/' element={<Login />} />
@@ -21,8 +22,8 @@ function App() {
           <Route exact path='*' element={<NotFound />} />
         </Routes>
       </Router>
-    );
-  }
+    </>
+  );
 
 }
 
