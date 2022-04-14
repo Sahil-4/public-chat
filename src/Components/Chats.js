@@ -12,9 +12,7 @@ const Chats = () => {
     if (!loginCredentials.name) {
       Navigate("/");
     } else {
-      return () => {
-        connectToServer();
-      };
+      connectToServer();
     }
   }, []);
 

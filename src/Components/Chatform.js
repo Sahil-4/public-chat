@@ -23,6 +23,8 @@ const Chatform = () => {
       <input
         className="chat-input H100"
         type="text"
+        required="True"
+        placeholder="Type your message..."
         value={message}
         onChange={handleOnChange}
       />
