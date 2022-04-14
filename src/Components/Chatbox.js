@@ -6,8 +6,10 @@ const Chatbox = () => {
   const { Messages } = useContext(ChatContext);
 
   const scrollToBottom = () => {
-    const element = document.getElementById("chats-container");
-    element.scrollTop = element.scrollHeight;
+    try {
+      const element = document.getElementById("chats-container");
+      element.scrollTop = element.scrollHeight;
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -17,7 +19,7 @@ const Chatbox = () => {
   }, [Messages]);
 
   return (
-    <div className="chats-container">
+    <div className="chats-container" id="chats-container">
       {Messages.map((message, index) => (
         <ChatMessage key={index} message={message} />
       ))}

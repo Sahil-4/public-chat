@@ -49,15 +49,16 @@ const ChatState = (props) => {
 
         socket.on('connect', () => {
             console.log("connected To Server");
-            // setStatus(false);
+            setStatus(false);
             socket.emit('join-chat', loginCredentials.name);
+            let data = { message: `${loginCredentials.name}, joined the chat.`, author: loginCredentials.name, timestamp: giveTimestamp() }
+            socket.emit('send-chat', data);
         })
 
         socket.on('users', users => {
             console.log("users recv from Server");
             setUsers(users);
-            let data = { message: `${loginCredentials.name}, joined the chat.`, author: loginCredentials.name, timestamp: giveTimestamp() }
-            socket.emit('send-chat', data);
+            console.log(users);
         })
 
         socket.on('recv-chat', (data) => {
