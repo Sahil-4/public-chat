@@ -10,8 +10,10 @@ const Chatform = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    sendChat(message);
-    setMessage("");
+    if (message !== "") {
+      sendChat(message);
+      setMessage("");
+    }
   };
 
   const handleOnChange = (e) => {
