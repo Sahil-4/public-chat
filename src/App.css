@@ -9,6 +9,7 @@ input,
 button {
   width: 70%;
   font-size: 1.5rem;
+  color: #FFFFFF;
   background: #060606;
   text-align: center;
   margin: 10px 10%;
@@ -106,14 +107,14 @@ button {
 }
 
 .loader-active {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   position: fixed;
-  left: calc(50% - 40px);
-  top: calc(50% - 40px);
+  left: calc(50% - 30px);
+  top: calc(50% - 30px);
   border-radius: 50%;
-  border: 20px solid #BCD4EC;
-  border-top: 20px solid #509BE0;
+  border: 10px solid #BCD4EC;
+  border-top: 10px solid #509BE0;
   animation: spin 1s linear infinite;
 }
 
@@ -130,6 +131,6 @@ button {
 @media screen and (min-width : 720px) {
   .chat-form {
     width: 720px;
-    margin: 0 auto;
+    margin: 15px auto;
   }
 }

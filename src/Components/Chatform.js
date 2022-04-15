@@ -30,24 +30,11 @@ const Chatform = () => {
         value={message}
         onChange={handleOnChange}
       />
-      <button
-        className="chat-btn send-btn H100"
-        type="submit"
-        onClick={() => {
-          console.log("hello sf");
-        }}
-      >
+      <button className="chat-btn send-btn H100" type="submit">
         <img src={SendIcon} alt="Send icon" className="H100" />
       </button>
       <button className="chat-btn H100" type="button">
-        <img
-          src={EmojiIcon}
-          alt="Emoji icon"
-          className="H100"
-          onClick={() => {
-            console.log("hello mf");
-          }}
-        />
+        <img src={EmojiIcon} alt="Emoji icon" className="H100" />
       </button>
     </form>
   );

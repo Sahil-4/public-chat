@@ -14,7 +14,7 @@ const Chats = () => {
     } else {
       connectToServer();
     }
-  }, []);
+  }, [loginCredentials]);
 
   return (
     <div className="chats-page H100">
