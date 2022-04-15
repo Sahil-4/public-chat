@@ -130,8 +130,12 @@ button {
 }
 
 @media screen and (min-width : 720px) {
+  .chats-container {
+    height: calc(100% - 25px - 58px);
+  }
+
   .chat-form {
     width: 720px;
-    margin: 15px auto;
+    height: 58px;
   }
 }
