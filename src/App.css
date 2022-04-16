@@ -36,10 +36,12 @@ button {
 
 .chat {
   width: 60%;
-  margin: 3px 5px;
-  word-wrap: break-word;
   color: #000000;
   background-color: #FFFFFF;
+  word-wrap: break-word;
+  margin: 3px 5px;
+  padding: 3px;
+  border-radius: 7px 7px 7px 0px;
 }
 
 .chat-send {
@@ -47,6 +49,7 @@ button {
   background-color: #1477D4;
   text-align: right;
   float: right;
+  border-radius: 7px 7px 0px 7px;
 }
 
 .chat-author {
