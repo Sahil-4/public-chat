@@ -5,8 +5,8 @@
   margin-top: 50%;
 }
 
-input,
-button {
+.input,
+.button {
   width: 70%;
   font-size: 1.5rem;
   color: #FFFFFF;
@@ -18,7 +18,7 @@ button {
   border-radius: 3px;
 }
 
-button {
+.button {
   background: #1477D4;
   width: 30%;
 }
@@ -141,4 +141,9 @@ button {
     width: 720px;
     height: 58px;
   }
+}
+
+.emoji-picker {
+  position: "absolute";
+  bottom: "32px";
 }

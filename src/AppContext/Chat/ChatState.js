@@ -82,5 +82,4 @@ const ChatState = (props) => {
     )
 }
 
-
 export default ChatState;

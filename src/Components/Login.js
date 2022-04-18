@@ -26,11 +26,14 @@ const Login = () => {
           type="text"
           name="name"
           required="True"
+          className="input"
           placeholder="Enter your Name"
           value={loginCredentials.name}
           onChange={handleOnChange}
         />
-        <button type="submit">Start Chat</button>
+        <button className="button" type="submit">
+          Start Chat
+        </button>
       </form>
     </div>
   );
